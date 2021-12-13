@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>controllerServlet</servlet-name>
+        <servlet-class>com.example.web2.ControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>areaCheckServlet</servlet-name>
+        <servlet-class>com.example.web2.AreaCheckServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>formJsp</servlet-name>
+        <jsp-file>/form.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>resultJsp</servlet-name>
+        <jsp-file>/result.jsp</jsp-file>
+    </servlet>
+    <filter>
+        <filter-name>filter</filter-name>
+        <filter-class>com.example.web2.EnterFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/check</url-pattern>
+        <url-pattern>/form</url-pattern>
+        <url-pattern>/result</url-pattern>
+        <url-pattern>/</url-pattern>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
+    <servlet-mapping>
+        <servlet-name>controllerServlet</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>areaCheckServlet</servlet-name>
+        <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>formJsp</servlet-name>
+        <url-pattern>/form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>resultJsp</servlet-name>
+        <url-pattern>/result</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
